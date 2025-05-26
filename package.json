@@ -13,6 +13,7 @@
     "test:integration": "cypress open --e2e --browser electron"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.77.2",
     "classnames": "^2.5.1",
     "lodash": "^4.17.21",
     "next": "15.1.2",
