@@ -1,5 +1,13 @@
+import { createClientAdapter } from '../common/adapter/ClientAdapterFactory';
 import { Riddle } from './RiddleService';
-import { getAnswerFor as getAnswerForRiddleSdk } from 'riddle-exam';
+
+export const useRandomRiddleAdapter = createClientAdapter({
+    name: 'randomRiddle',
+    callback: () => {
+        console.log('getRandomRiddle');
+        return getRandomRiddle();
+    },
+});
 
 type Options = {
     excluded?: string;
@@ -16,12 +24,3 @@ export const getRandomRiddle = async (options?: Options): Promise<Riddle> => {
 
     return response.json();
 };
-
-export const getRiddle = async (id: string): Promise<Riddle> => {
-    const response = await fetch(`http://localhost:3000/api/riddle/${id}`);
-
-    return response.json();
-};
-
-export const getAnswerFor = async (id: string): Promise<{ id: string; text: string }> =>
-    getAnswerForRiddleSdk(id);

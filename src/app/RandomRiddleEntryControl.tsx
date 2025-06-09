@@ -10,7 +10,11 @@ export const RandomRiddleEntryControl = () => {
     }
 
     return (
-        <button onClick={handleClick} className="border border-blue-500 p-5">
+        <button
+            onClick={handleClick}
+            className="border border-blue-500 p-5"
+            data-test="random-riddle-entry-control"
+        >
             Resolve random riddle
         </button>
     );

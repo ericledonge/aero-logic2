@@ -1,4 +1,4 @@
-import { getRiddle } from '@/app/domain/RandomRiddleAdapter';
+import { getRiddle, useRiddleAdapter } from '@/app/domain/RiddleAdapter';
 import { RiddleAnswers } from './RiddleAnswers';
 import { ClientLayout } from '../../ClientLayout';
 
@@ -8,7 +8,10 @@ export default async function RiddlePage({
     params: Promise<{ id: string }>;
 }) {
     const id = (await params).id;
-    const riddle = await getRiddle(id);
+    // const riddle = await getRiddle(id);
+
+    const { getData } = await useRiddleAdapter();
+    const riddle = await getData(id);
 
     return (
         <main className="text-lg">
