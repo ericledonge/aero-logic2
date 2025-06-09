@@ -3,7 +3,7 @@ import { RandomRiddleEntryControl } from './RandomRiddleEntryControl';
 import { ClientLayout } from './ClientLayout';
 
 export default function Home() {
-    const { workInterval, timestamp } = createARandomRiddleModel();
+    const { workInterval, timestamp } = createARandomRiddleModel(new Date());
 
     return (
         <main className="text-lg">
