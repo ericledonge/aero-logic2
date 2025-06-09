@@ -1,5 +1,6 @@
 import { createARandomRiddleModel } from '@/useCases/seeRandomRiddle/randomRiddleService';
 import { RandomRiddleEntryControl } from './RandomRiddleEntryControl';
+import { ClientLayout } from './ClientLayout';
 
 export default function Home() {
     const { workInterval, timestamp } = createARandomRiddleModel();
@@ -10,7 +11,9 @@ export default function Home() {
                 <p>Work Interval: {workInterval}</p>
                 <p>Timestamp: {timestamp}</p>
                 <div className="p-20 text-center">
-                    <RandomRiddleEntryControl />
+                    <ClientLayout>
+                        <RandomRiddleEntryControl />
+                    </ClientLayout>
                 </div>
             </div>
         </main>
