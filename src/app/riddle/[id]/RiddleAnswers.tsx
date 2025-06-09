@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { Riddle } from '../../domain/RiddleService';
 import classNames from 'classnames';
 import Link from 'next/link';
-import { getAnswerFor, getRandomRiddle } from '@/app/domain/RandomRiddleAdapter';
+import { getAnswerFor, getRandomRiddle } from '@/app/domain/RiddleAdapter';
 import { useSolveRandomRiddle } from '@/useCases/solveRandomRiddle/useSolveRandomRiddle';
 
 type Props = {

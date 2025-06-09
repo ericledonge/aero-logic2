@@ -8,8 +8,8 @@ export default function Home() {
     return (
         <main className="text-lg">
             <div>
-                <p>Work Interval: {workInterval}</p>
-                <p>Timestamp: {timestamp}</p>
+                <p data-test="work-interval">Work Interval: {workInterval}</p>
+                <p data-test="timestamp">Timestamp: {timestamp}</p>
                 <div className="p-20 text-center">
                     <ClientLayout>
                         <RandomRiddleEntryControl />

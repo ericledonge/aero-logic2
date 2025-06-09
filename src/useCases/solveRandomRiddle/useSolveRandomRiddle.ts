@@ -1,4 +1,4 @@
-import { getAnswerFor, getRandomRiddle } from '@/app/domain/RandomRiddleAdapter';
+import { getAnswerFor, getRandomRiddle } from '@/app/domain/RiddleAdapter';
 import { Riddle } from '@/app/domain/RiddleService';
 import useRandomRiddleData from '@/app/domain/useRandomRiddleData';
 import { useEffect, useState } from 'react';

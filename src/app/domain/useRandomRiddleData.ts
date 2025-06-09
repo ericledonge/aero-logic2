@@ -1,11 +1,12 @@
 import { useQuery } from '@tanstack/react-query';
-
-import { getRandomRiddle } from './RandomRiddleAdapter';
+import { useRandomRiddleAdapter } from './RandomRiddleAdapter';
 
 const useRandomRiddleData = () => {
+    const { getData } = useRandomRiddleAdapter();
+
     const { data, isLoading, error } = useQuery({
         queryKey: ['randomRiddle'],
-        queryFn: () => getRandomRiddle(),
+        queryFn: () => getData(),
     });
 
     return {

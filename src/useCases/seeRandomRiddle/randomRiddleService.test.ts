@@ -2,21 +2,21 @@ import { describe, expect, it } from 'vitest';
 import { createARandomRiddleModel } from './randomRiddleService';
 
 describe('randomRiddleService', () => {
-    it('returns model when it is easy jet work interval', () => {
+    it('returns model when it is easy jet time work interval', () => {
         const date = new Date('2025-06-09T12:00:00');
         const riddle = createARandomRiddleModel(date);
 
         expect(riddle.workInterval).toBe('Easy jets');
     });
 
-    it('returns model with returning pips work interval', () => {
+    it('returns model when it is returning pips time work interval', () => {
         const date = new Date('2025-06-09T18:00:00');
         const riddle = createARandomRiddleModel(date);
 
         expect(riddle.workInterval).toBe('Returning pips');
     });
 
-    it('returns model with sleepies work interval', () => {
+    it('returns model when it is sleepies time work interval', () => {
         const dates = [new Date('2025-06-09T23:30:00'), new Date('2025-06-09T04:00:00')];
 
         dates.forEach((date) => {
@@ -26,7 +26,7 @@ describe('randomRiddleService', () => {
         });
     });
 
-    it('returns model with busy times work interval', () => {
+    it('returns model when it is busy times work interval', () => {
         const date = new Date('2025-06-09T06:00:00');
         const riddle = createARandomRiddleModel(date);
 
