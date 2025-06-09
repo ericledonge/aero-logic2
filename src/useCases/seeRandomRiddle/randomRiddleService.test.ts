@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { createARandomRiddleModel } from './randomRiddleService';
 
 describe('randomRiddleService', () => {
-    it('returns model with easy jet work interval', () => {
+    it('returns model when it is easy jet work interval', () => {
         const date = new Date('2025-06-09T12:00:00');
         const riddle = createARandomRiddleModel(date);
 
