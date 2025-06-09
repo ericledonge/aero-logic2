@@ -1,5 +1,4 @@
-export const createARandomRiddleModel = () => {
-    const date = new Date();
+export const createARandomRiddleModel = (date: Date) => {
     const year = date.getFullYear();
     const month = String(date.getMonth() + 1).padStart(2, '0'); // +1 because months are 0-indexed
     const day = String(date.getDate()).padStart(2, '0');
@@ -9,11 +8,13 @@ export const createARandomRiddleModel = () => {
 
     let workInterval = 'Busy Times';
 
-    if (hoursStr >= 11 && hoursStr > 17) {
+    if (hoursStr < 5) {
+        workInterval = 'Sleepies';
+    } else if (hoursStr >= 11 && hoursStr < 17) {
         workInterval = 'Easy jets';
     } else if (hoursStr >= 17 && hoursStr < 23) {
         workInterval = 'Returning pips';
-    } else if (hoursStr >= 23 && hoursStr < 5) {
+    } else if (hoursStr >= 23) {
         workInterval = 'Sleepies';
     }
 
