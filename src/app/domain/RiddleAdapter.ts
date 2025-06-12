@@ -1,6 +1,5 @@
 import { createServerAdapter } from '../common/adapter/ServerAdapterFactory';
 import { Riddle } from './RiddleService';
-import { getAnswerFor as getAnswerForRiddleSdk } from 'riddle-exam';
 
 export const useRiddleAdapter = createServerAdapter({
     name: 'riddle',
@@ -12,6 +11,3 @@ export const getRiddle = async (id: string): Promise<Riddle> => {
 
     return response.json();
 };
-
-export const getAnswerFor = async (id: string): Promise<{ id: string; text: string }> =>
-    getAnswerForRiddleSdk(id);

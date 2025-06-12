@@ -1,8 +1,8 @@
-import { getAnswerFor, getRandomRiddle } from '@/app/domain/RiddleAdapter';
 import { Riddle } from '@/app/domain/RiddleService';
 import useRandomRiddleData from '@/app/domain/useRandomRiddleData';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { createSolveRandomRiddleModel } from './solveRandomRiddle';
+import { getAnswerFor } from '../../app/domain/RiddleAnswerAdapter';
 
 export const useSolveRandomRiddle = ({ riddle }: { riddle: Riddle }) => {
     const { data, isLoading, error } = useRandomRiddleData({ excluded: riddle.id });
