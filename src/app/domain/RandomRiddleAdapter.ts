@@ -4,7 +4,6 @@ import { Riddle } from './RiddleService';
 export const useRandomRiddleAdapter = createClientAdapter({
     name: 'randomRiddle',
     callback: () => {
-        console.log('getRandomRiddle');
         return getRandomRiddle();
     },
 });

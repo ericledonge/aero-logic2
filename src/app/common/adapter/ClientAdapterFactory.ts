@@ -16,9 +16,6 @@ export function createClientAdapter<T, U = never>(options: AdapterFactoryOptions
         if (process.env.NEXT_PUBLIC_PHASE === 'test') {
             return {
                 getData: () => {
-                    console.log('settleFakeStub', options.name);
-                    const result = settleFakeStub<T>(options.name, fakes);
-                    console.log(result);
                     return settleFakeStub<T>(options.name, fakes);
                 },
             };
